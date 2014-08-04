@@ -1,8 +1,4 @@
----
-title: "Distributions"
-output: html_document
----
-
+#Distributions
 ### Overlapped distributions example
 
 This is an example of how to make overlapping, transparent distributions using ggplot2. The data is fake, and just simulated within the code. The code is reproduced below and can be found as a separate .R file in this same directory.
