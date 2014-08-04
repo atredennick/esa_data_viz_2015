@@ -1,13 +1,3 @@
----
-title: "Distributions"
-output: html_document
----
-
-### Overlapped distributions example
-
-This is an example of how to make overlapping, transparent distributions using ggplot2. The data is fake, and just simulated within the code.
-
-```{r distributions, warning = FALSE}
 # First we load up all the relevant libraries
 library(ggplot2)
 library(ggthemes)
@@ -32,4 +22,3 @@ ggplot(data, aes(x = var1, fill = species)) +
   scale_fill_hue(l = 40) +
   scale_x_continuous(limits = c(0,4)) +
   theme_few()
-```
