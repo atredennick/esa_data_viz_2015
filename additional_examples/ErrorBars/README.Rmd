@@ -65,3 +65,4 @@ myplot
 #save the plot as a pdf (change file variable first)
 file = "Grazing.pdf"
 ggsave(filename=file, plot=myplot, width=4, height=4, units="in")
+```
