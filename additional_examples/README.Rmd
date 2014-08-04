@@ -6,19 +6,21 @@ Here are several more example plots you can do with ggplot2.
 * X-Y Scatter Allometry
 * Time Series
 * Maps
+* Easy study area maps with the ggmaps library
+
+Each of the examples are contained in their own folders within this directory. Run the code below in your RStudio console to get all the necessary packages (R libraries) installed (if you have not already done so).
 
 ---
 
 ```{r, libraries}
-# First we load up all the relevant libraries
-library(ggplot2)
-library(ggthemes)
-library(grid)
-library(gridExtra)
-library(plyr)
-library(scales)
-# Install cshapes if you don't have it.
-# install.packages("cshapes")
+# Install the packages you do not have.
+install.packages("ggplot2", dependencies = TRUE)
+install.packages("plyr")
+install.packages("ggthemes")
+install.packages("reshape2")
+install.packages("gridExtra")
+install.packages("devtools")
+install.packages('cshapes')
 ```
 
 
