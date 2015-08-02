@@ -1113,5 +1113,23 @@ ggsave(file = "/path/to/figure/filename.pdf")
 \end{frame}
 
 % --------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{ggplot2 Help Pages}
+\begin{center}
+\includegraphics[scale=.5]{images/ggplot_help.png}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{StackOverflow}
+\begin{center}
+\includegraphics[scale=.35]{images/stackoverflow.png}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------------------
 % end, hope it was useful.
 \end{document}
