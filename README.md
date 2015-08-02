@@ -14,6 +14,10 @@ Sunday, August 9, 2015
 
 ---
 
+The R programming language is one of the most widely used tools for statistical analysis in the academic community. In addition to its large and ever-expanding suite of analytical tools, R is capable of producing publication quality figures that can easily be embedded into publications, presentations, and lab notebooks. In addition to its core functionality, the ability to do sophisticated visualization in R is enhanced by supplemental packages, most notably the ggplot2 library. In this workshop we move beyond basic plotting and highlight some of the more powerful approaches for visualization in R, focusing in particular on the functionality represented by the ggplot2 library (and associated packages). We will explain the 'grammar of graphics' that ggplot2 uses to build graphs and figures of all types. This workshop will also briefly cover the use of the dplyr and reshape2 packages, which are incredibly useful tools to format datasets before plotting and/or analysis. We will provide some example datasets beforehand but feel free to bring your own along with your laptop and a pre-installed copy of R and RStudio (available free online for all platforms at rstudio.com) to participate.
+
+---
+
 ## Pre workshop instructions
 
 **Important:** There will be wifi in conference rooms this year, but plan on spending 10 minutes Saturday night (or even before arriving in Baltimore) to download and install R and RStudio, to install the packages listed below, and to download a local copy of this repository (see instructions below). It takes a bit of bandwidth to do all this, so best not to rely on convention center wifi.
