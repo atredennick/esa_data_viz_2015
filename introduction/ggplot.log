@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  2 AUG 2015 12:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  4 AUG 2015 08:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1508,30 +1508,26 @@ Package pdftex.def Info: figure/ex3.pdf used on input line 6.
  <./figure/ex3.pdf>]
 \openout4 = `ggplot.vrb'.
 
- (./ggplot.vrb <figure/ex4.pdf, id=1729, 433.62pt x 289.08pt>
-File: figure/ex4.pdf Graphic file (type pdf)
+ (./ggplot.vrb <figure/ex5.pdf, id=1729, 361.35pt x 216.81pt>
+File: figure/ex5.pdf Graphic file (type pdf)
 
-<use figure/ex4.pdf>
-Package pdftex.def Info: figure/ex4.pdf used on input line 8.
-(pdftex.def)             Requested size: 214.04236pt x 142.69583pt.
+<use figure/ex5.pdf>
+Package pdftex.def Info: figure/ex5.pdf used on input line 18.
+(pdftex.def)             Requested size: 214.04236pt x 128.42625pt.
 ) [61
 
- <./figure/ex4.pdf>]
+ <./figure/ex5.pdf>]
 \openout4 = `ggplot.vrb'.
 
  (./ggplot.vrb
-<figure/ex5.pdf, id=1761, 361.35pt x 216.81pt>
-File: figure/ex5.pdf Graphic file (type pdf)
- <use figure/ex5.pdf>
-Package pdftex.def Info: figure/ex5.pdf used on input line 20.
-(pdftex.def)             Requested size: 214.04236pt x 128.42625pt.
-)
-Overfull \vbox (4.2115pt too high) detected at line 1248
- []
+<figure/ex4.pdf, id=1761, 433.62pt x 289.08pt>
+File: figure/ex4.pdf Graphic file (type pdf)
+ <use figure/ex4.pdf>
+Package pdftex.def Info: figure/ex4.pdf used on input line 8.
+(pdftex.def)             Requested size: 214.04236pt x 142.69583pt.
+) [62
 
-[62
-
- <./figure/ex5.pdf>] [63
+ <./figure/ex4.pdf>] [63
 
 ]
 \openout4 = `ggplot.vrb'.
@@ -1653,10 +1649,17 @@ Package pdftex.def Info: images/tenenbaums.png used on input line 3.
  <./images/tenenbaums.png>]
 \openout4 = `ggplot.vrb'.
 
- (./ggplot.vrb)
-[77
+ (./ggplot.vrb
+<figure/facet_wrap_theme_exec_royal.pdf, id=2212, 433.62pt x 289.08pt>
+File: figure/facet_wrap_theme_exec_royal.pdf Graphic file (type pdf)
 
-] [78
+<use figure/facet_wrap_theme_exec_royal.pdf>
+Package pdftex.def Info: figure/facet_wrap_theme_exec_royal.pdf used on input l
+ine 13.
+(pdftex.def)             Requested size: 230.46739pt x 153.64394pt.
+) [77
+
+ <./figure/facet_wrap_theme_exec_royal.pdf>] [78
 
 ]
 \openout4 = `ggplot.vrb'.
@@ -1683,14 +1686,14 @@ LaTeX Font Warning: Font shape `OMS/zi4/m/n' undefined
 \openout4 = `ggplot.vrb'.
 
  (./ggplot.vrb
-<images/chang_book.png, id=2344, 583.17876pt x 724.7075pt>
+<images/chang_book.png, id=2352, 583.17876pt x 724.7075pt>
 File: images/chang_book.png Graphic file (type png)
 
 <use images/chang_book.png>
 Package pdftex.def Info: images/chang_book.png used on input line 9.
 (pdftex.def)             Requested size: 87.47304pt x 108.70143pt.
 
-<images/hadley.png, id=2345, 603.25375pt x 682.55pt>
+<images/hadley.png, id=2353, 603.25375pt x 682.55pt>
 File: images/hadley.png Graphic file (type png)
  <use images/hadley.png>
 Package pdftex.def Info: images/hadley.png used on input line 10.
@@ -1702,7 +1705,7 @@ Package pdftex.def Info: images/hadley.png used on input line 10.
 \openout4 = `ggplot.vrb'.
 
  (./ggplot.vrb
-<images/ggplot_help.png, id=2372, 1069.9975pt x 719.68875pt>
+<images/ggplot_help.png, id=2380, 1069.9975pt x 719.68875pt>
 File: images/ggplot_help.png Graphic file (type png)
 
 <use images/ggplot_help.png>
@@ -1714,7 +1717,7 @@ Overfull \hbox (227.70757pt too wide) in paragraph at lines 3--4
  []
 
 )
-Overfull \vbox (154.39674pt too high) detected at line 1607
+Overfull \vbox (154.39674pt too high) detected at line 1606
  []
 
 [83
@@ -1723,7 +1726,7 @@ Overfull \vbox (154.39674pt too high) detected at line 1607
 \openout4 = `ggplot.vrb'.
 
  (./ggplot.vrb
-<images/stackoverflow.png, id=2398, 778.91pt x 598.235pt>
+<images/stackoverflow.png, id=2406, 778.91pt x 598.235pt>
 File: images/stackoverflow.png Graphic file (type png)
 
 <use images/stackoverflow.png>
@@ -1741,11 +1744,11 @@ Package pdftex.def Info: images/stackoverflow.png used on input line 3.
 \tf@snm=\write8
 \openout8 = `ggplot.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1620.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1620.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1619.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1619.
  (./ggplot.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1620.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1620.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1619.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1619.
 
 Package rerunfilecheck Info: File `ggplot.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1757,13 +1760,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1620.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1619.
  ) 
 Here is how much of TeX's memory you used:
- 19032 strings out of 493117
- 354798 string characters out of 6135433
+ 19037 strings out of 493117
+ 355000 string characters out of 6135433
  411075 words of memory out of 5000000
- 21702 multiletter control sequences out of 15000+600000
+ 21706 multiletter control sequences out of 15000+600000
  14845 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,61p,451b,688s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1781,10 +1784,10 @@ ssi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msam10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msam7.pfb>
-Output written on ggplot.pdf (84 pages, 2185384 bytes).
+Output written on ggplot.pdf (84 pages, 2187276 bytes).
 PDF statistics:
- 2507 PDF objects out of 2984 (max. 8388607)
- 2307 compressed objects within 24 object streams
+ 2515 PDF objects out of 2984 (max. 8388607)
+ 2313 compressed objects within 24 object streams
  186 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 

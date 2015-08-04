@@ -1198,12 +1198,22 @@ Using the d2 dataset you created earlier, generate this plot below. Take a quick
 \begin{frame}[fragile]
 \frametitle{Exercise 4}
 \begin{itemize}
-\item Using the climate dataset, create a new variable called sign. Make it logical (true/false) based on the sign of Anomaly10y.
-\item Plot a bar plot and use \texttt{sign} variable as the fill.\\
+\item Use \texttt{plyr} to calculate the mean and standard deviation of petal length by species.\\
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{agg} \hlkwb{<-} \hlkwd{ddply}\hlstd{(iris,} \hlkwd{.}\hlstd{(Species), summarise,}
+             \hlkwc{mean.petal.length} \hlstd{=} \hlkwd{mean}\hlstd{(Petal.Length),}
+             \hlkwc{sd.petal.length} \hlstd{=} \hlkwd{sd}\hlstd{(Petal.Length))}
+\hlopt{?}\hlkwd{geom_errorbar}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
 \begin{knitrout}\footnotesize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=.75\linewidth]{figure/ex4} 
+{\centering \includegraphics[width=.75\linewidth]{figure/ex5} 
 
 }
 
@@ -1219,24 +1229,12 @@ Using the d2 dataset you created earlier, generate this plot below. Take a quick
 \begin{frame}[fragile]
 \frametitle{Exercise 5}
 \begin{itemize}
-\item Aggregate the diamonds data by cut and color; calculate the mean and standard deviation of price.\\
-\begin{knitrout}\footnotesize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{d3} \hlkwb{<-} \hlkwd{subset}\hlstd{(diamonds, cut}\hlopt{%in%}\hlkwd{c}\hlstd{(}\hlstr{"Fair"}\hlstd{,} \hlstr{"Ideal"}\hlstd{))}
-\hlstd{d4} \hlkwb{<-} \hlkwd{subset}\hlstd{(d3, color}\hlopt{%in%}\hlkwd{c}\hlstd{(}\hlstr{"E"}\hlstd{,} \hlstr{"J"}\hlstd{))}
-\hlstd{dagg} \hlkwb{<-} \hlkwd{ddply}\hlstd{(d4,} \hlkwd{.}\hlstd{(cut, color), summarise,}
-              \hlkwc{mean_price} \hlstd{=} \hlkwd{mean}\hlstd{(price),}
-              \hlkwc{sd_price} \hlstd{=} \hlkwd{sd}\hlstd{(price))}
-\hlstd{dodge} \hlkwb{<-} \hlkwd{position_dodge}\hlstd{(}\hlkwc{width}\hlstd{=}\hlnum{0.5}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
-
+\item Using the climate dataset, create a new variable called sign. Make it logical (true/false) based on the sign of Anomaly10y.
+\item Plot a bar plot and use \texttt{sign} variable as the fill.\\
 \begin{knitrout}\footnotesize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=.75\linewidth]{figure/ex5} 
+{\centering \includegraphics[width=.75\linewidth]{figure/ex4} 
 
 }
 
@@ -1477,17 +1475,18 @@ Themes are a great way to define custom plots.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# install.packages('wesanderson')}
-\hlkwd{library}\hlstd{(}\hlstr{"wesanderson"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: there is no package called 'wesanderson'}}\begin{alltt}
+\hlkwd{library}\hlstd{(wesanderson)}
 \hlcom{# display a palette}
-\hlkwd{display.wes.palette}\hlstd{(}\hlnum{4}\hlstd{,} \hlstr{"Royal1"}\hlstd{)}
+\hlkwd{wes_palette}\hlstd{(}\hlstr{"Royal1"}\hlstd{)}
 \end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=.75\linewidth]{figure/facet_wrap_theme_exec_royal} 
+
+}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: could not find function "{}display.wes.palette"{}}}\end{kframe}
+
 \end{knitrout}
 \end{center}
 \end{frame}

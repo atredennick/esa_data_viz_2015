@@ -823,14 +823,25 @@ ggplot(d2, aes(clarity, fill = cut)) +
 \begin{frame}[fragile]
 \frametitle{Exercise 4}
 \begin{itemize}
-\item Using the climate dataset, create a new variable called sign. Make it logical (true/false) based on the sign of Anomaly10y.
-\item Plot a bar plot and use \texttt{sign} variable as the fill.\\
-<<ex4, echo = FALSE, warning = FALSE, fig.width=6, fig.height=4, out.width='.75\\linewidth', fig.align='center', fig.show='hold'>>=
-clim <- read.csv('../data/climate.csv', header = TRUE)
-clim$sign <- ifelse(clim$Anomaly10y<0, FALSE, TRUE)
-# or as simple as
-# clim$sign <- clim$Anomaly10y < 0
-ggplot(clim, aes(Year, Anomaly10y)) + geom_bar(stat = "identity", aes(fill = sign)) + theme_gray()
+\item Use \texttt{plyr} to calculate the mean and standard deviation of petal length by species.\\
+<<ex5.1, echo = TRUE, warning = FALSE, fig.width=5, fig.height=3, out.width='.5\\linewidth', fig.align='center', fig.show='hold'>>=
+agg <- ddply(iris, .(Species), summarise,
+             mean.petal.length = mean(Petal.Length),
+             sd.petal.length = sd(Petal.Length))
+?geom_errorbar()
+@
+
+<<ex5, echo = FALSE, warning = FALSE, fig.width=5, fig.height=3, out.width='.75\\linewidth', fig.align='center', fig.show='hold'>>=
+agg <- ddply(iris, .(Species), summarise,
+             mean.petal.length = mean(Petal.Length),
+             sd.petal.length = sd(Petal.Length))
+ggplot(agg, aes(color=Species))+
+  geom_errorbar(aes(x=Species, ymax=mean.petal.length+sd.petal.length, 
+                    ymin=mean.petal.length-sd.petal.length), width=0.2)+
+  geom_point(aes(x=Species, y=mean.petal.length), size=3)+
+  xlab("Species")+
+  ylab("Petal Length")+
+  theme_bw()
 @
 
 \end{itemize}
@@ -841,30 +852,14 @@ ggplot(clim, aes(Year, Anomaly10y)) + geom_bar(stat = "identity", aes(fill = sig
 \begin{frame}[fragile]
 \frametitle{Exercise 5}
 \begin{itemize}
-\item Aggregate the diamonds data by cut and color; calculate the mean and standard deviation of price.\\
-<<ex5.1, echo = TRUE, warning = FALSE, fig.width=5, fig.height=3, out.width='.5\\linewidth', fig.align='center', fig.show='hold'>>=
-d3 <- subset(diamonds, cut%in%c("Fair", "Ideal"))
-d4 <- subset(d3, color%in%c("E", "J"))
-dagg <- ddply(d4, .(cut, color), summarise,
-              mean_price = mean(price),
-              sd_price = sd(price))
-dodge <- position_dodge(width=0.5)
-@
-
-<<ex5, echo = FALSE, warning = FALSE, fig.width=5, fig.height=3, out.width='.75\\linewidth', fig.align='center', fig.show='hold'>>=
-d3 <- subset(diamonds, cut%in%c("Fair", "Ideal"))
-d4 <- subset(d3, color%in%c("E", "J"))
-dagg <- ddply(d4, .(cut, color), summarise,
-              mean_price = mean(price),
-              sd_price = sd(price))
-dodge <- position_dodge(width=0.5)
-ggplot(dagg, aes(x=cut, color=color))+
-  geom_point(aes(y=mean_price),position=dodge, size=3)+
-  geom_errorbar(aes(ymax=mean_price+sd_price, ymin=mean_price-sd_price), 
-                position=dodge, width=0.3)+
-  xlab("Cut")+
-  ylab("Mean price (USD)")+
-  theme_bw()
+\item Using the climate dataset, create a new variable called sign. Make it logical (true/false) based on the sign of Anomaly10y.
+\item Plot a bar plot and use \texttt{sign} variable as the fill.\\
+<<ex4, echo = FALSE, warning = FALSE, fig.width=6, fig.height=4, out.width='.75\\linewidth', fig.align='center', fig.show='hold'>>=
+clim <- read.csv('../data/climate.csv', header = TRUE)
+clim$sign <- ifelse(clim$Anomaly10y<0, FALSE, TRUE)
+# or as simple as
+# clim$sign <- clim$Anomaly10y < 0
+ggplot(clim, aes(Year, Anomaly10y)) + geom_bar(stat = "identity", aes(fill = sign)) + theme_gray()
 @
 
 \end{itemize}
@@ -1024,9 +1019,9 @@ library(ggthemes)
 \begin{center}
 <<facet_wrap_theme_exec_royal, eval = TRUE, echo = TRUE, fig.width=6, fig.height=4, out.width='.75\\linewidth', fig.align='center'>>=
 # install.packages('wesanderson')
-library("wesanderson")
+library(wesanderson)
 # display a palette
-display.wes.palette(4, "Royal1")
+wes_palette("Royal1")
 @
 \end{center}
 \end{frame}
