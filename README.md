@@ -48,7 +48,7 @@ You will want to copy and paste the above into the "Console" of RStudio, like be
 ![](cp_code.png)
 
 ### Downloading code/data from this repository  
-If you're already familiar with `Git`, then simply clone this repo. If you're not familiar with Git, simply hit the **Download ZIP** button on the right side of this page. If you're not sure where to save it, just download and unzip to your Desktop.
+If you're already familiar with `Git`, then simply clone this repo. If you're not familiar with Git, simply hit the **Download ZIP** button on the right side of this page (scroll up to see it). If you're not sure where to save it, just download and unzip to your Desktop.
 
 *Please wait until Saturday afternoon to this so you are able to download the latest changes. Otherwise do another git pull or replace your downloaded copy with a newer one.*
 
