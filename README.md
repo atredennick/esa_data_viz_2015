@@ -40,7 +40,7 @@ install.packages("rfisheries")
 install.packages("rgbif")
 install.packages("taxize")
 # optional
-devtools::install_github("rWBclimate", "ropensci")
+devtools::install_github("ropensci/rWBclimate")
 ```
 
 You will want to copy and paste the above into the "Console" of RStudio, like below. After copying and pasting, simply hit 'enter', and you will see a bunch of text letting you know that they are being installed.
