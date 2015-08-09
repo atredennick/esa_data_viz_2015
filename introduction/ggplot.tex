@@ -122,6 +122,88 @@ Install some packages
 \end{knitrout}
 \end{frame}
 
+
+\begin{frame}[fragile]
+\frametitle{1 minute}
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=.75\linewidth]{figure/gapminder} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{}
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{ggplot}\hlstd{(gapminder,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=gdpPercap,} \hlkwc{y}\hlstd{=lifeExp))}\hlopt{+}
+  \hlkwd{geom_point}\hlstd{(}\hlkwc{shape}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwd{aes}\hlstd{(}\hlkwc{color}\hlstd{=continent))}\hlopt{+}
+  \hlkwd{stat_smooth}\hlstd{(}\hlkwc{method}\hlstd{=}\hlstr{"lm"}\hlstd{,} \hlkwc{size}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"black"}\hlstd{)}\hlopt{+}
+  \hlkwd{scale_x_log10}\hlstd{()} \hlopt{+}
+  \hlkwd{xlab}\hlstd{(}\hlstr{"Per Capita GDP"}\hlstd{)} \hlopt{+}
+  \hlkwd{ylab}\hlstd{(}\hlstr{"Life Expectancy (yrs)"}\hlstd{)}\hlopt{+}
+  \hlkwd{facet_wrap}\hlstd{(}\hlopt{~}\hlstd{continent)}\hlopt{+}
+  \hlkwd{theme_bw}\hlstd{()} \hlopt{+}
+  \hlkwd{guides}\hlstd{(}\hlkwc{color}\hlstd{=}\hlnum{FALSE}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{~30 minutes}
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=.75\linewidth]{figure/gapminder3} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{}
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(scales)}
+\hlstd{conts} \hlkwb{<-} \hlkwd{unique}\hlstd{(gapminder[,}\hlstr{"continent"}\hlstd{])}
+\hlstd{cols} \hlkwb{<-} \hlstd{scales::}\hlkwd{hue_pal}\hlstd{()(}\hlkwd{length}\hlstd{(conts))}
+\hlkwd{par}\hlstd{(}\hlkwc{mfrow}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,}\hlnum{3}\hlstd{))}
+\hlstd{counter}\hlkwb{<-}\hlnum{1}
+\hlkwa{for}\hlstd{(i} \hlkwa{in} \hlstd{conts)\{}
+  \hlkwd{plot}\hlstd{(gapminder[}\hlkwd{which}\hlstd{(gapminder}\hlopt{$}\hlstd{continent}\hlopt{==}\hlstd{i),}\hlstr{"gdpPercap"}\hlstd{],}
+       \hlstd{gapminder[}\hlkwd{which}\hlstd{(gapminder}\hlopt{$}\hlstd{continent}\hlopt{==}\hlstd{i),}\hlstr{"lifeExp"}\hlstd{],} \hlkwc{col}\hlstd{=cols[counter],}
+       \hlkwc{xlab}\hlstd{=}\hlstr{"Per Capita GDP"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Life Expectancy (yrs)"}\hlstd{,}
+       \hlkwc{main}\hlstd{=i,} \hlkwc{las}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{log}\hlstd{=}\hlstr{"x"}\hlstd{)}
+  \hlstd{fit} \hlkwb{<-} \hlkwd{lm}\hlstd{(gapminder[}\hlkwd{which}\hlstd{(gapminder}\hlopt{$}\hlstd{continent}\hlopt{==}\hlstd{i),}\hlstr{"lifeExp"}\hlstd{]}\hlopt{~}
+              \hlkwd{log}\hlstd{(gapminder[}\hlkwd{which}\hlstd{(gapminder}\hlopt{$}\hlstd{continent}\hlopt{==}\hlstd{i),}\hlstr{"gdpPercap"}\hlstd{]))}
+  \hlstd{pred} \hlkwb{<-} \hlkwd{predict}\hlstd{(fit,} \hlkwc{interval} \hlstd{=} \hlstr{"confidence"}\hlstd{)}
+  \hlkwd{lines}\hlstd{(}\hlkwd{sort}\hlstd{(gapminder[}\hlkwd{which}\hlstd{(gapminder}\hlopt{$}\hlstd{continent}\hlopt{==}\hlstd{i),}\hlstr{"gdpPercap"}\hlstd{]),}
+        \hlkwd{sort}\hlstd{(pred[,}\hlnum{1}\hlstd{]))}
+  \hlkwd{lines}\hlstd{(}\hlkwd{sort}\hlstd{(gapminder[}\hlkwd{which}\hlstd{(gapminder}\hlopt{$}\hlstd{continent}\hlopt{==}\hlstd{i),}\hlstr{"gdpPercap"}\hlstd{]),}
+        \hlkwd{sort}\hlstd{(pred[,}\hlnum{2}\hlstd{]),} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+  \hlkwd{lines}\hlstd{(}\hlkwd{sort}\hlstd{(gapminder[}\hlkwd{which}\hlstd{(gapminder}\hlopt{$}\hlstd{continent}\hlopt{==}\hlstd{i),}\hlstr{"gdpPercap"}\hlstd{]),}
+        \hlkwd{sort}\hlstd{(pred[,}\hlnum{3}\hlstd{]),} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+  \hlstd{counter}\hlkwb{<-}\hlstd{counter}\hlopt{+}\hlnum{1}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+
 % --------------------------------------------------------------
 % --------------------------------------------------------------
 

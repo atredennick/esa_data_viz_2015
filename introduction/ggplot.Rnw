@@ -82,6 +82,92 @@ install_github("rWBclimate", "ropensci")
 @
 \end{frame}
 
+
+\begin{frame}[fragile]
+\frametitle{1 minute}
+<<gapminder, tidy=FALSE, echo=FALSE, fig.width=6, fig.height=5, out.width='.75\\linewidth', fig.align='center'>>=
+library(ggplot2)
+library(gapminder)
+
+ggplot(gapminder, aes(x=gdpPercap, y=lifeExp))+
+  geom_point(shape=1, aes(color=continent))+
+  stat_smooth(method="lm", size=1, color="black")+
+  scale_x_log10() + 
+  xlab("Per Capita GDP") + 
+  ylab("Life Expectancy (yrs)")+
+  facet_wrap(~continent)+
+  theme_bw() + guides(color=FALSE)
+@
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{}
+<<gapminder2, tidy=FALSE, echo=TRUE, eval=FALSE>>=
+ggplot(gapminder, aes(x=gdpPercap, y=lifeExp))+
+  geom_point(shape=1, aes(color=continent))+
+  stat_smooth(method="lm", size=1, color="black")+
+  scale_x_log10() + 
+  xlab("Per Capita GDP") + 
+  ylab("Life Expectancy (yrs)")+
+  facet_wrap(~continent)+
+  theme_bw() + 
+  guides(color=FALSE)
+@
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{~30 minutes}
+<<gapminder3, tidy=FALSE, echo=FALSE, fig.width=6, fig.height=5, out.width='.75\\linewidth', fig.align='center'>>=
+library(scales)
+conts <- unique(gapminder[,"continent"])
+cols <- scales::hue_pal()(length(conts))
+par(mfrow=c(2,3))
+counter<-1
+for(i in conts){
+  plot(gapminder[which(gapminder$continent==i),"gdpPercap"],
+       gapminder[which(gapminder$continent==i),"lifeExp"], col=cols[counter],
+       xlab="Per Capita GDP", ylab="Life Expectancy (yrs)",
+       main=i, las=1, log="x")
+  fit <- lm(gapminder[which(gapminder$continent==i),"lifeExp"]~log(gapminder[which(gapminder$continent==i),"gdpPercap"]))
+  pred <- predict(fit, interval = "confidence")
+  lines(sort(gapminder[which(gapminder$continent==i),"gdpPercap"]), sort(pred[,1]))
+  lines(sort(gapminder[which(gapminder$continent==i),"gdpPercap"]), sort(pred[,2]), lty=2)
+  lines(sort(gapminder[which(gapminder$continent==i),"gdpPercap"]), sort(pred[,3]), lty=2)
+  counter<-counter+1
+}
+@
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{}
+<<gapminder4, tidy=FALSE, echo=TRUE, eval=FALSE>>=
+library(scales)
+conts <- unique(gapminder[,"continent"])
+cols <- scales::hue_pal()(length(conts))
+par(mfrow=c(2,3))
+counter<-1
+for(i in conts){
+  plot(gapminder[which(gapminder$continent==i),"gdpPercap"],
+       gapminder[which(gapminder$continent==i),"lifeExp"], col=cols[counter],
+       xlab="Per Capita GDP", ylab="Life Expectancy (yrs)",
+       main=i, las=1, log="x")
+  fit <- lm(gapminder[which(gapminder$continent==i),"lifeExp"]~
+              log(gapminder[which(gapminder$continent==i),"gdpPercap"]))
+  pred <- predict(fit, interval = "confidence")
+  lines(sort(gapminder[which(gapminder$continent==i),"gdpPercap"]), 
+        sort(pred[,1]))
+  lines(sort(gapminder[which(gapminder$continent==i),"gdpPercap"]), 
+        sort(pred[,2]), lty=2)
+  lines(sort(gapminder[which(gapminder$continent==i),"gdpPercap"]),
+        sort(pred[,3]), lty=2)
+  counter<-counter+1
+}
+@
+\end{frame}
+
+
 % --------------------------------------------------------------
 % --------------------------------------------------------------
 

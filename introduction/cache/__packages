@@ -1,7 +1,9 @@
 base
+gapminder
 ggplot2
 knitr
 MASS
 plyr
 reshape2
+scales
 wesanderson
